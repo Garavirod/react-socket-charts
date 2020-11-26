@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { AddBandForm } from './components/AddBand';
+import { BandList } from './components/BandList';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="container">
+      <div className="alert">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Server status:
+          <span className="text-success ml-2">Online</span>
+          <span className="text-danger ml-2">Offline</span>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      <h1>Graphic Bands</h1>
+      <hr/>
+      <div className="row">
+        <div className="col-md-8">
+          <BandList/>
+        </div>
+        <div className="col-md-4">
+          <AddBandForm/>
+        </div>
+      </div>
+      
     </div>
   );
 }
